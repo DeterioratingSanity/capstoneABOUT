@@ -1,4 +1,6 @@
 <script type="text/javascript" src="https://unpkg.com/packery@2/dist/packery.pkgd.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <!--
 <style>
   *{
@@ -120,6 +122,7 @@
     min-height:78vh;
     display: flex;
     justify-content: center;
+    align-items: center;
     background: linear-gradient(8.75turn, #FF6961, #FF3D33);
     -webkit-mask: var(--mask-edge-zig-zag-vertical);
     padding-top: 50px;
@@ -129,9 +132,13 @@
     color: #f5f5f5;
     font-size: 5em;
     font-family: 'Jua', sans-serif;
+    text-align: center;
   }
   .header img{
     height: .8em;
+  }
+  .header span{
+    white-space: nowrap;
   }
   #sectionOne{
     align-items: center;
@@ -150,9 +157,104 @@
     color: #24272e;
     background-color: #f5f5f5;
   }
+
+  .fill-Wrapper{
+    width: 40vw;
+    min-width:350px;
+    background-color:white;
+    height: auto;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    -webkit-mask: var(--mask-edge-zig-zag-vertical);
+    display: flex;
+    justify-content: center;
+  }
+  .fill{
+    width: 100%;
+    overflow: visible;
+    background: linear-gradient(8.75turn, #FF6961, #FF3D33);
+    -webkit-mask: var(--mask-edge-zig-zag-vertical);
+    padding: 25px;
+  }
+
+  @media screen and (width < 600px){
+    .header{
+      font-size: 4.5em;
+    }
+  }
+
+  .return{
+    font-size: .5em;
+    background-color:#f5f5f5;
+    color:#FF6961;
+    border-radius: var(--radius-4);
+    padding: 6px;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  .return:hover{
+    color: #FF3D33;
+    transition: 0.5s;
+  }
+
+
+.sectWrapperOuter{
+  background: linear-gradient(8.75turn, #FF6961, #FF3D33);
+  position: sticky;
+  top: 0;
+  -webkit-mask: var(--mask-edge-zig-zag-bottom);
+  padding-bottom: 15px;
+}
+.sectWrapperInner{
+  background-color: #f5f5f5;
+  -webkit-mask: var(--mask-edge-zig-zag-bottom);
+  padding-bottom: 15px;
+}
+.sectHeading{
+  font-family: 'Liefde', sans-serif;
+  background-color: red;
+  text-align: center;
+  background: linear-gradient(8.75turn, #FF6961, #FF3D33);
+  padding-top: 5px;
+  padding-bottom: 25px;
+  -webkit-mask: var(--mask-edge-zig-zag-bottom);
+  font-size: 2.5vmax;
+}
+.twoWide{
+  width:100%;
+  margin-bottom: 5vh;
+}
+
+.three-organizer{
+  display: relative;
+}
+.three-organizer-element{
+ width: 100%;
+ margin-bottom: 5vh;
+}
+
+@media screen and (min-width: 800px){
+
+ .three-organizer{
+   display: flex;
+   justify-content: space-between;
+ }
+ .three-organizer-element{
+   width:30%;
+   margin-bottom: auto;
+ }
+ .twoWide{
+   width:45%;
+   margin-bottom: auto;
+ }
+ .back{
+   flex-direction: row-reverse;
+ }
+}
 </style>
 
 <link href="https://fonts.cdnfonts.com/css/jua" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/liefde" rel="stylesheet">
 
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 
@@ -162,7 +264,8 @@
       <div class="sect" id="sectionOne" >
 
         <div class="header">
-          Glynn Study <img src="plus.png"> About
+          <span>Glynn Study <img src="plus.png"></span> About<br>
+          <span class="return">Home</span>
         </div>
 
       </div>
@@ -175,16 +278,59 @@
     <div class="twoWrapper3">
       <div class="sect bodySect">
         <div class="bodySect-content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum mattis ullamcorper velit sed. Ipsum a arcu cursus vitae congue. Tristique senectus et netus et malesuada fames ac turpis. Suscipit tellus mauris a diam maecenas sed enim ut sem. Nibh mauris cursus mattis molestie a. Morbi tristique senectus et netus. Turpis egestas integer eget aliquet nibh praesent tristique. Amet nulla facilisi morbi tempus iaculis urna id volutpat. Facilisi nullam vehicula ipsum a arcu. Sed elementum tempus egestas sed sed risus. Arcu dui vivamus arcu felis bibendum. Nunc mattis enim ut tellus elementum sagittis vitae. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Aliquam purus sit amet luctus venenatis lectus. Mollis nunc sed id semper. Faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae. Convallis convallis tellus id interdum velit. Vulputate ut pharetra sit amet aliquam id diam maecenas.
 
-          Nibh cras pulvinar mattis nunc sed blandit libero. Posuere lorem ipsum dolor sit. Pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum. At lectus urna duis convallis convallis tellus id. Phasellus egestas tellus rutrum tellus pellentesque eu. Et egestas quis ipsum suspendisse. Arcu cursus vitae congue mauris rhoncus aenean vel. Placerat orci nulla pellentesque dignissim enim sit amet. Euismod elementum nisi quis eleifend quam adipiscing vitae. Semper risus in hendrerit gravida rutrum quisque non tellus. Tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius.
+          <div class="sectWrapperOuter">
+            <div class="sectWrapperInner">
+              <div class="sectHeading">~ the why ~</div>
+            </div>
+          </div>
 
-          Ultrices tincidunt arcu non sodales neque sodales. Ut venenatis tellus in metus vulputate eu. Aliquam malesuada bibendum arcu vitae. Non arcu risus quis varius quam quisque id diam. Et pharetra pharetra massa massa ultricies mi quis hendrerit dolor. Facilisis volutpat est velit egestas. Integer eget aliquet nibh praesent tristique magna sit amet. Morbi non arcu risus quis varius. Viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est. Egestas erat imperdiet sed euismod nisi porta. Eu feugiat pretium nibh ipsum consequat nisl vel. Sed libero enim sed faucibus turpis in eu. Et ligula ullamcorper malesuada proin libero nunc consequat interdum varius. Ac ut consequat semper viverra nam libero. At quis risus sed vulputate odio ut enim blandit volutpat. Odio morbi quis commodo odio aenean sed adipiscing diam donec. Sem et tortor consequat id.
+          <div style="min-height:30vh;">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum mattis ullamcorper velit sed. Ipsum a arcu cursus vitae congue. Tristique senectus et netus et malesuada fames ac turpis.
+          </div>
+          <br><br>
+          <div class="three-organizer">
+              <div class="twoWide">
+                <img src="https://www.gordontraining.com/wp-content/uploads/Leadership-Blog-117-July-7-List.jpg" style="width:100%;aspect-ratio: 1/1;border-radius: var(--radius-round); object-fit: cover">
+              </div>
+              <div class="twoWide">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Vestibulum mattis ullamcorper velit sed. Ipsum a arcu cursus vitae
+                congue. Tristique senectus et netus et malesuada fames ac turpis.
+              </div>
+          </div>
 
-          Erat velit scelerisque in dictum non consectetur a erat nam. Sit amet mauris commodo quis imperdiet massa tincidunt nunc. Vitae semper quis lectus nulla at volutpat diam. Nam at lectus urna duis convallis convallis tellus id interdum. Vitae tortor condimentum lacinia quis vel eros donec ac. Fusce ut placerat orci nulla pellentesque dignissim enim sit. In iaculis nunc sed augue lacus viverra. Sodales ut eu sem integer vitae justo eget. Lorem ipsum dolor sit amet consectetur adipiscing elit. Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing.
+          <div style="clear:both"> </div><br><br>
 
-          Eget nunc scelerisque viverra mauris in aliquam sem fringilla. Sed sed risus pretium quam. Quam lacus suspendisse faucibus interdum posuere. Tortor condimentum lacinia quis vel. At augue eget arcu dictum varius duis at consectetur. Pellentesque pulvinar pellentesque habitant morbi tristique. Amet justo donec enim diam. Dui accumsan sit amet nulla facilisi morbi tempus iaculis urna. Adipiscing commodo elit at imperdiet dui accumsan. Lorem ipsum dolor sit amet consectetur adipiscing.
-          Tortor consequat id porta nibh venenatis cras sed. Morbi quis commodo odio aenean sed adipiscing diam donec adipiscing. Sem viverra aliquet eget sit amet tellus cras. Nec nam aliquam sem et tortor consequat id porta. Velit sed ullamcorper morbi tincidunt ornare. Cursus vitae congue mauris rhoncus aenean vel elit. Consequat semper viverra nam libero justo laoreet sit amet. Sodales ut eu sem integer vitae.
+          <div class="three-organizer back">
+              <div class="twoWide">
+                <img src="https://www.gordontraining.com/wp-content/uploads/Leadership-Blog-117-July-7-List.jpg" style="width:100%;aspect-ratio: 1/1;border-radius: var(--radius-round); object-fit: cover">
+              </div>
+              <div class="twoWide">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Vestibulum mattis ullamcorper velit sed. Ipsum a arcu cursus vitae
+                congue. Tristique senectus et netus et malesuada fames ac turpis.
+              </div>
+          </div>
+
+
+          <div style="clear:both"> </div><br><br>
+
+          <div class="three-organizer" style="">
+              <div class="three-organizer-element">
+                  <img src="https://www.gordontraining.com/wp-content/uploads/Leadership-Blog-117-July-7-List.jpg" style="width:100%;aspect-ratio: 1/1;border-radius: var(--radius-round); object-fit: cover"><br>
+                  <div style="text-align: center"> e </div>
+              </div>
+              <div class="three-organizer-element">
+                  <img src="https://www.gordontraining.com/wp-content/uploads/Leadership-Blog-117-July-7-List.jpg" style="width:100%;aspect-ratio: 1/1;border-radius: var(--radius-round); object-fit: cover;"><br>
+                  <div style="text-align: center"> e </div>
+              </div>
+              <div class="three-organizer-element">
+                  <img src="https://www.gordontraining.com/wp-content/uploads/Leadership-Blog-117-July-7-List.jpg" style="width:100%;aspect-ratio: 1/1;border-radius: var(--radius-round); object-fit: cover"><br>
+                  <div style="text-align: center"> e </div>
+              </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -211,3 +357,9 @@
     </div>
   </div>
 </div>
+<script>
+  $('.return').click(function(){
+    window.open("https://www.glynnstudyplus.org", "_self");
+    return false;
+  })
+</script>
