@@ -63,6 +63,7 @@
 
 *{
   margin: 0;
+  scroll-behavior: smooth;
  }
   .oneWrapper{
     background-color: #24272e;
@@ -211,14 +212,15 @@
   padding-bottom: 15px;
 }
 .sectHeading{
-  font-family: 'Liefde', sans-serif;
+  font-family: 'Corethan Script' /*'Liefde'*/ , sans-serif;
   background-color: red;
   text-align: center;
   background: linear-gradient(8.75turn, #FF6961, #FF3D33);
   padding-top: 5px;
   padding-bottom: 25px;
   -webkit-mask: var(--mask-edge-zig-zag-bottom);
-  font-size: 2.5vmax;
+  font-size: 1.5em;
+  cursor: pointer;
 }
 .twoWide{
   width:100%;
@@ -233,6 +235,97 @@
  margin-bottom: 5vh;
 }
 
+#revealOne {
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+  	 -moz-transform: scale(0.9);
+  		-ms-transform: scale(0.9);
+  		 -o-transform: scale(0.9);
+  				transform: scale(0.9);
+  -webkit-transition: all 1s ease-in-out;
+  	 -moz-transition: all 1s ease-in-out;
+  		-ms-transition: all 1s ease-in-out;
+  		 -o-transition: all 1s ease-in-out;
+  				transition: all 1s ease-in-out;
+}
+#revealOne.visible {
+  opacity: 1;
+  -webkit-transform: none;
+  	 -moz-transform: none;
+  		-ms-transform: none;
+  		 -o-transform: none;
+  				transform: none;
+}
+#revealTwo {
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+  	 -moz-transform: scale(0.9);
+  		-ms-transform: scale(0.9);
+  		 -o-transform: scale(0.9);
+  				transform: scale(0.9);
+  -webkit-transition: all 1s ease-in-out;
+  	 -moz-transition: all 1s ease-in-out;
+  		-ms-transition: all 1s ease-in-out;
+  		 -o-transition: all 1s ease-in-out;
+  				transition: all 1s ease-in-out;
+}
+#revealTwo.visible {
+  opacity: 1;
+  -webkit-transform: none;
+  	 -moz-transform: none;
+  		-ms-transform: none;
+  		 -o-transform: none;
+  				transform: none;
+}
+#revealThree {
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+  	 -moz-transform: scale(0.9);
+  		-ms-transform: scale(0.9);
+  		 -o-transform: scale(0.9);
+  				transform: scale(0.9);
+  -webkit-transition: all 1s ease-in-out;
+  	 -moz-transition: all 1s ease-in-out;
+  		-ms-transition: all 1s ease-in-out;
+  		 -o-transition: all 1s ease-in-out;
+  				transition: all 1s ease-in-out;
+}
+#revealThree.visible {
+  opacity: 1;
+  -webkit-transform: none;
+  	 -moz-transform: none;
+  		-ms-transform: none;
+  		 -o-transform: none;
+  				transform: none;
+}
+#revealFour {
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+  	 -moz-transform: scale(0.9);
+  		-ms-transform: scale(0.9);
+  		 -o-transform: scale(0.9);
+  				transform: scale(0.9);
+  -webkit-transition: all 1s ease-in-out;
+  	 -moz-transition: all 1s ease-in-out;
+  		-ms-transition: all 1s ease-in-out;
+  		 -o-transition: all 1s ease-in-out;
+  				transition: all 1s ease-in-out;
+}
+#revealFour.visible {
+  opacity: 1;
+  -webkit-transform: none;
+  	 -moz-transform: none;
+  		-ms-transform: none;
+  		 -o-transform: none;
+  				transform: none;
+}
+.hide{
+  display: none;
+}
+.sectReference{
+  text-decoration: none;
+  color: #f5f5f5;
+}
 @media screen and (orientation: landscape){
 
  .three-organizer{
@@ -255,6 +348,10 @@
 
 <link href="https://fonts.cdnfonts.com/css/jua" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/liefde" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+<link href="https://fonts.cdnfonts.com/css/corethan-script" rel="stylesheet">
 
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 
@@ -274,63 +371,67 @@
 </div>
 
 <div class="twoWrapper">
-  <div class="twoWrapper2">
+  <div class="twoWrapper2" id="sect-start-one">
     <div class="twoWrapper3">
       <div class="sect bodySect">
         <div class="bodySect-content">
 
-          <div class="sectWrapperOuter">
+          <div class="sectWrapperOuter" >
             <div class="sectWrapperInner">
-              <div class="sectHeading">~ the why ~</div>
+              <a href="#sect-start-one" class="sectReference"><div class="sectHeading" id="sect-head-one">~ the why ~</div></a>
             </div>
           </div>
-
-          <div style="min-height:30vh;">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum mattis ullamcorper velit sed. Ipsum a arcu cursus vitae congue. Tristique senectus et netus et malesuada fames ac turpis.
+<div class="hide hideable" id="hideOne"><br id="triggerOne">
+          <div style="min-height:30vh;" id="revealOne">
+              This project is dedicated to promoting positive study skills among the student body, ideally in a manner which is applicable to any other institution, yet which is
+              nonetheless attuned to our own insofar as its particular interviews are concerned. In my academic experience up to this point, I have seen many of my peers struggle
+              with keeping up with their work in the classroom in a manner which does not in and of itself further harm their scholastic endeavors.
           </div>
-          <br><br>
-          <div class="three-organizer">
+          <br id="triggerTwo"><br>
+          <div id="revealTwo" class="three-organizer">
               <div class="twoWide">
                 <img src="https://www.gordontraining.com/wp-content/uploads/Leadership-Blog-117-July-7-List.jpg" style="width:100%;aspect-ratio: 1/1;border-radius: var(--radius-round); object-fit: cover">
               </div>
               <div class="twoWide">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Vestibulum mattis ullamcorper velit sed. Ipsum a arcu cursus vitae
-                congue. Tristique senectus et netus et malesuada fames ac turpis.
+                Students are massively impacted by lack of access to resources which promote positive time management and study skills because their time is implicitly limited.
+                If a student is expected to self-search and develop positive habits without any external support, they may succeed - but in doing so, they will be obliged to focus
+                less on school work instead. By providing a resource with opinions from their peers, teachers, and other experts, though, they can find strategies within a system
+                that promotes growth without causing even more stress to students or their schedules.
+
               </div>
           </div>
 
-          <div style="clear:both"> </div><br><br>
+          <div style="clear:both"> </div><br id="triggerThree"><br>
 
-          <div class="three-organizer back">
+          <div id="revealThree" class="three-organizer back">
               <div class="twoWide">
-                <img src="https://www.gordontraining.com/wp-content/uploads/Leadership-Blog-117-July-7-List.jpg" style="width:100%;aspect-ratio: 1/1;border-radius: var(--radius-round); object-fit: cover">
+                <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/the-unbalanced-scales-stevn-dutton.jpg" style="width:100%;aspect-ratio: 1/1;border-radius: var(--radius-round); object-fit: cover">
               </div>
               <div class="twoWide">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Vestibulum mattis ullamcorper velit sed. Ipsum a arcu cursus vitae
-                congue. Tristique senectus et netus et malesuada fames ac turpis.
+                Students have a hard time finding manageable and low-stress ways to study while keeping up with their other obligations. This project aims to develop a codified
+                resource which can offer suggestions and expedite individual exploration of potential strategies for time management and study - especially exam prep.
+
               </div>
           </div>
 
 
-          <div style="clear:both"> </div><br><br>
+          <div style="clear:both"> </div><br id="triggerFour"><br>
 
-          <div class="three-organizer" style="">
+          <div id="revealFour" class="three-organizer" style="">
               <div class="three-organizer-element">
-                  <img src="https://www.gordontraining.com/wp-content/uploads/Leadership-Blog-117-July-7-List.jpg" style="width:100%;aspect-ratio: 1/1;border-radius: var(--radius-round); object-fit: cover"><br>
-                  <div style="text-align: center"> e </div>
+                  <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/49032ba8-b0e4-41c3-9ef6-42f7794bf94b.__CR0,0,970,600_PT0_SX970_V1___.jpg" style="width:100%;aspect-ratio: 1/1;border-radius: var(--radius-round); object-fit: cover"><br>
+                  <div style="text-align: center"> Organization </div>
               </div>
               <div class="three-organizer-element">
-                  <img src="https://www.gordontraining.com/wp-content/uploads/Leadership-Blog-117-July-7-List.jpg" style="width:100%;aspect-ratio: 1/1;border-radius: var(--radius-round); object-fit: cover;"><br>
-                  <div style="text-align: center"> e </div>
+                  <img src="https://media.istockphoto.com/id/171361479/photo/blue-gift-bag.jpg?s=612x612&w=0&k=20&c=_-joeqRI0c8js7s_T7Lz48KRdwEnnibdd89jLTuTchI=" style="width:100%;aspect-ratio: 1/1;border-radius: var(--radius-round); object-fit: cover;"><br>
+                  <div style="text-align: center"> Rewards </div>
               </div>
               <div class="three-organizer-element">
-                  <img src="https://www.gordontraining.com/wp-content/uploads/Leadership-Blog-117-July-7-List.jpg" style="width:100%;aspect-ratio: 1/1;border-radius: var(--radius-round); object-fit: cover"><br>
-                  <div style="text-align: center"> e </div>
+                  <img src="https://static-cse.canva.com/blob/564803/createeffectiveschedulefeaturedimage1.jpg" style="width:100%;aspect-ratio: 1/1;border-radius: var(--radius-round); object-fit: cover"><br>
+                  <div style="text-align: center"> Schedules </div>
               </div>
           </div>
-
+</div>
         </div>
       </div>
     </div>
@@ -362,4 +463,54 @@
     window.open("https://www.glynnstudyplus.org", "_self");
     return false;
   })
+
+  var oneCheck = 0;
+
+  $("#sect-head-one").click(function(){
+    if(oneCheck == 0){
+      $("#hideOne").removeClass("hide");
+      oneCheck = 1;
+    } else if (oneCheck == 1){
+      $("#hideOne").addClass("hide");
+      oneCheck = 0;
+    }
+  })
+
+	TweenLite.defaultEase = Linear.easeNone;
+	var controller = new ScrollMagic.Controller();
+
+  new ScrollMagic.Scene({
+      triggerElement: "#triggerOne",
+      triggerHook: 0.9, // show, when scrolled 10% into view
+      duration: 0, // hide 10% before exiting view (80% + 10% from bottom)
+      offset: 50 // move trigger to center of element
+    })
+    .setClassToggle("#revealOne", "visible") // add class to reveal
+    .addTo(controller);
+
+  new ScrollMagic.Scene({
+      triggerElement: "#triggerTwo",
+  		triggerHook: 0.9, // show, when scrolled 10% into view
+  		duration: 0, // hide 10% before exiting view (80% + 10% from bottom)
+  		offset: 50 // move trigger to center of element
+  	})
+  	.setClassToggle("#revealTwo", "visible") // add class to reveal
+  	.addTo(controller);
+
+  new ScrollMagic.Scene({
+      triggerElement: "#triggerThree",
+  		triggerHook: 0.9, // show, when scrolled 10% into view
+  		duration: 0, // hide 10% before exiting view (80% + 10% from bottom)
+  		offset: 50 // move trigger to center of element
+  	})
+  	.setClassToggle("#revealThree", "visible") // add class to reveal
+  	.addTo(controller);
+  new ScrollMagic.Scene({
+        triggerElement: "#triggerFour",
+    		triggerHook: 0.9, // show, when scrolled 10% into view
+    		duration: 0, // hide 10% before exiting view (80% + 10% from bottom)
+    		offset: 50 // move trigger to center of element
+    	})
+    	.setClassToggle("#revealFour", "visible") // add class to reveal
+    	.addTo(controller);
 </script>
