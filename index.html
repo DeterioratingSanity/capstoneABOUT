@@ -568,6 +568,46 @@
   		-ms-transform: none;
   		 -o-transform: none;
   				transform: none;
+}#revealSeventeen{
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+  	 -moz-transform: scale(0.9);
+  		-ms-transform: scale(0.9);
+  		 -o-transform: scale(0.9);
+  				transform: scale(0.9);
+  -webkit-transition: all 1s ease-in-out;
+  	 -moz-transition: all 1s ease-in-out;
+  		-ms-transition: all 1s ease-in-out;
+  		 -o-transition: all 1s ease-in-out;
+  				transition: all 1s ease-in-out;
+}
+#revealSeventeen.visible {
+  opacity: 1;
+  -webkit-transform: none;
+  	 -moz-transform: none;
+  		-ms-transform: none;
+  		 -o-transform: none;
+  				transform: none;
+}#revealEighteen{
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+  	 -moz-transform: scale(0.9);
+  		-ms-transform: scale(0.9);
+  		 -o-transform: scale(0.9);
+  				transform: scale(0.9);
+  -webkit-transition: all 1s ease-in-out;
+  	 -moz-transition: all 1s ease-in-out;
+  		-ms-transition: all 1s ease-in-out;
+  		 -o-transition: all 1s ease-in-out;
+  				transition: all 1s ease-in-out;
+}
+#revealEighteen.visible {
+  opacity: 1;
+  -webkit-transform: none;
+  	 -moz-transform: none;
+  		-ms-transform: none;
+  		 -o-transform: none;
+  				transform: none;
 }
 .hide{
   display: none;
@@ -892,13 +932,33 @@
               <a href="#sect-start-five" class="sectReference"><div class="sectHeading" id="sect-head-five">~ team ~</div></a>
             </div>
           </div>
-<div class="hide hideable" id="hideFive"><br id="trigger#">
+<div class="hide hideable" id="hideFive"><br id="triggerSeventeen">
 
-  <div id="reveal#" class="three-organizer" style="">
-      e
+  <div id="revealSeventeen" class="three-organizer" style="">
+    <div class="three-organizer-element">
+        <img src="xavier-team.png" style="width:100%;aspect-ratio: 1/1;border-radius: var(--radius-round); object-fit: cover; object-position: middle; background-color: white"><br>
+        <div style="text-align: center"> Xavier Crutchfield </div><br>
+        <div style="font-size: .5em; text-align: center">Cohort 2025</div>
+    </div>
+    <div class="three-organizer-element">
+        <img src="wyatt-team.png" style="width:100%;aspect-ratio: 1/1;border-radius: var(--radius-round); object-fit: cover; object-position: top; background-color: white"><br>
+        <div style="text-align: center"> Wyatt Wilson </div><br>
+        <div style="font-size: .5em; text-align: center">Cohort 2023</div>
+    </div>
+    <div class="three-organizer-element">
+        <img src="jack-team.png" style="width:100%;aspect-ratio: 1/1;border-radius: var(--radius-round); object-fit: cover; background-color: white"><br>
+        <div style="text-align: center"> Jack Redden </div><br>
+        <div style="font-size: .5em; text-align: center">Cohort 2024</div>
+    </div>
   </div>
 
+  <br id="triggerEighteen">
 
+    <div id="revealEighteen" class="three-organizer" style="">
+      Our team was brought together through mutual respect and an awareness of one another's skills resulting from in-class group work in the past. Xavier is immensely creative and helped
+      iron out the web design. Jack's dilligence and steadfast focus helped keep us all on track from beginning to end. All three of us have taken a web design class at Glynn Academy. Xavier and I
+      are also involved with the journalism pathway, which helped in our interviews.
+    </div>
 </div>
 
         </div>
@@ -1198,10 +1258,27 @@ $("#sect-head-five").click(function(){
   if(fiveCheck == 0){
     $("#hideFive").removeClass("hide");
 
+    new ScrollMagic.Scene({
+          triggerElement: "#triggerSeventeen",
+          triggerHook: 0.9, // show, when scrolled 10% into view
+          duration: 0, // hide 10% before exiting view (80% + 10% from bottom)
+          offset: 50 // move trigger to center of element
+        })
+        .setClassToggle("#revealSeventeen", "visible") // add class to reveal
+        .addTo(controller);
+    new ScrollMagic.Scene({
+          triggerElement: "#triggerEighteen",
+          triggerHook: 0.9, // show, when scrolled 10% into view
+          duration: 0, // hide 10% before exiting view (80% + 10% from bottom)
+          offset: 50 // move trigger to center of element
+        })
+        .setClassToggle("#revealEighteen", "visible") // add class to reveal
+        .addTo(controller);
 
     fiveCheck = 1;
   } else if (fiveCheck == 1){
     $("#hideFive").addClass("hide");
+    $("#revealSeventeen").removeClass("visible");
     fiveCheck = 0;
   }
 })
